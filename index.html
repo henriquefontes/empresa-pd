@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main-style.css" />
+    <link rel="stylesheet" href="assets/css/company-page.css" />
+    <title>Phishing Detector</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <h1 class="logo">
+            <a href="#">Phishing<span>Detector</span></a>
+          </h1>
+          <nav>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Blog</a>
+            <a href="#">Links Confiáveis</a>
+            <a class="button" id="loginBtn" style="margin-left: 20px" href=""
+              >Login</a
+            >
+            <img
+              src=""
+              class="logged-user-image"
+              style="display: none; cursor: pointer"
+            />
+          </nav>
+        </header>
+        <main>
+          <div class="company-top">
+            <div class="company-image-container">
+              <img src="" alt="" class="company-image" />
+              <div class="edit-icon-circle" data-open-modal="editProfile">
+                <i class="bx bxs-pencil"></i>
+              </div>
+            </div>
+            <div class="company-name-container">
+              <h2 class="company-name">Empresa</h2>
+              <img src="assets/img/badge.svg" alt="Empresa" />
+            </div>
+          </div>
+          <section class="tab-container">
+            <div class="tab-menu">
+              <div class="tabs">
+                <button class="tab-button active" data-tab-header="domains">
+                  Domínios
+                </button>
+                <button class="tab-button" data-tab-header="details">
+                  Detalhes
+                </button>
+              </div>
+              <div class="tab-underline"></div>
+              <hr class="tab-divisor" />
+            </div>
+            <article data-tab="domains" class="active">
+              <div class="topbar">
+                <div class="buttons">
+                  <div class="button filled" data-open-modal="addDomains">
+                    Adicionar
+                  </div>
+                </div>
+                <!-- <div class="grid-input-container">
+                  <input
+                    type="text"
+                    class="grid-input"
+                    id="grid-input"
+                    placeholder="Pesquise aqui.."
+                  />
+                  <i class="bx bx-search search-icon"></i>
+                </div> -->
+              </div>
+              <table class="grid">
+                <thead>
+                  <tr>
+                    <th>Domínio</th>
+                    <th>Certificado HTTPS</th>
+                    <th>Conexão HTTP</th>
+                    <th>Filtro HTTP</th>
+                    <!-- <th class="ab-header"></th> -->
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </article>
+            <article data-tab="details">
+              <h3 class="details-title">
+                Sobre a empresa <span class="company-name">Google</span>
+              </h3>
+              <p class="details-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                numquam dolores eligendi ipsam vel voluptate sequi voluptatem
+                eveniet adipisci ducimus, ex nemo quidem repellat blanditiis
+                voluptatum in illo labore veniam. Eius enim iure inventore ut
+                temporibus obcaecati odio fuga est!
+              </p>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer>
+      <div class="social-media">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="bx bxl-facebook-circle"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="bx bxl-instagram-alt"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+      <h2>PhishingDetector © | 2023</h2>
+      <p>support@phishingdetector.com</p>
+    </footer>
+    <div class="modal-wrapper active">
+      <div class="modal" data-modal="addDomains">
+        <form
+          style="display: flex; flex-direction: column; gap: 30px"
+          id="cadDom"
+        >
+          <i class="bx bx-x modal-close-button"></i>
+          <h3 class="modal-title">Adicionar Domínio</h3>
+          <div class="modal-input-container">
+            <input
+              type="text"
+              name="dominio"
+              class="modal-input"
+              placeholder="Domínio"
+            />
+            <i class="bx bx-link modal-input-icon"></i>
+          </div>
+          <button class="button filled modal-button">Adicionar</button>
+        </form>
+      </div>
+      <div class="modal" data-modal="editProfile">
+        <form
+          style="display: flex; flex-direction: column; gap: 60px"
+          id="editProf"
+        >
+          <i class="bx bx-x modal-close-button"></i>
+          <h3 class="modal-title">Editar Perfil</h3>
+          <!-- <div class="company-image-container modal-company-image-container">
+          <img
+            src="https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&q=80&w=1407&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            class="company-image company-image-edit"
+          />
+          <div class="edit-icon-container">
+            <i class="bx bxs-camera"></i>
+          </div>
+        </div> -->
+          <div class="modal-input-container">
+            <textarea
+              type="text"
+              name="imagem"
+              class="details-description modal-textarea"
+              placeholder="Digite aqui.."
+            ></textarea>
+            <label for="imagem">Sobre</label>
+            <!-- <i class="bx bx-link modal-input-icon"></i> -->
+          </div>
+          <button class="button filled modal-button">Salvar</button>
+        </form>
+      </div>
+      <div class="modal active" id="load">
+        <img src="assets/img/loading.gif" style="width: 50px" />
+      </div>
+    </div>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/company.js"></script>
+  </body>
+</html>

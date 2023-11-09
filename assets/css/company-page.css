@@ -1,0 +1,103 @@
+:root {
+  --primary-color: #514869;
+  --secondary-color: #00ff88;
+  --dark-primary-color: #322c41;
+  --darkest-primary-color: #201b2c;
+  --dark-text: #2b134b;
+}
+
+textarea {
+  resize: none;
+}
+
+.company-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.company-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff8f;
+}
+
+.company-name-container {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-name {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.details-title {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.details-title .company-name {
+  font: inherit;
+}
+
+.details-description {
+  color: white;
+}
+
+.company-image-edit {
+  border: 2px solid #ffffff8f;
+  width: 120px;
+  height: 120px;
+}
+
+.company-image-container {
+  position: relative;
+}
+
+.edit-icon-circle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(-70%, -40%);
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.modal-company-image-container {
+  margin: 15px 0;
+}
+
+.edit-icon-container {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+[data-open-modal="editProfile"],
+[data-open-modal="addDomains"] {
+  display: none;
+}

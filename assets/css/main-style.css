@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #514869;
+  --secondary-color: #00ff88;
+  --dark-primary-color: #322c41;
+  --darkest-primary-color: #201b2c;
+  --dark-text: #2b134b;
+  --grid-background-color: #5c5277;
+  --grid-dark-background-color: #49415f;
+  --grid-light-background-color: #675c84;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(rgba(81, 72, 105, 0.95), rgba(32, 27, 44, 0.95)),
+    url("../img/background.png") no-repeat fixed;
+  background-size: cover;
+}
+
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+header {
+  padding: 36px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  font-size: 26px;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+nav {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  font-weight: 600;
+  transition: 0.2s all;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.logged-user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.button {
+  width: 140px;
+  height: 40px;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  user-select: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s all;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--dark-text);
+  text-decoration: none;
+}
+
+.button.filled {
+  background-color: var(--secondary-color);
+  color: var(--dark-text);
+}
+
+.button.filled:hover {
+  color: var(--secondary-color);
+  background: none;
+  cursor: pointer;
+}
+
+.tab-menu {
+  position: relative;
+}
+
+.tabs {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 5px;
+}
+
+.tab-button {
+  background: none;
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s color;
+}
+
+.tab-button.active {
+  color: var(--secondary-color);
+}
+
+.tab-divisor {
+  height: 2px;
+  opacity: 0.2;
+}
+
+.tab-underline {
+  width: 85px;
+  height: 2px;
+  background-color: #00ff88;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(0px);
+  transition: 0.2s all;
+}
+
+.tab-container article {
+  padding: 20px 0;
+}
+
+.tab-container {
+  height: 100%;
+}
+
+*[data-tab]:not(.active) {
+  display: none;
+}
+
+footer {
+  height: 150px;
+  background-color: var(--dark-primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+}
+
+.social-media a {
+  color: var(--secondary-color);
+  font-size: 30px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+footer h2 {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+footer p {
+  font-size: 12px;
+  color: #cacaca;
+  font-weight: 600;
+}
+
+.grid {
+  width: 100%;
+  background-color: var(--grid-background-color);
+  color: white;
+  border: 2px solid var(--grid-light-background-color);
+  border-spacing: 0;
+}
+
+.grid th {
+  border-bottom: 2px solid var(--grid-light-background-color);
+}
+
+.grid td:not(:last-child),
+.grid th:not(:last-child) {
+  border-right: 2px solid var(--grid-light-background-color);
+}
+
+.grid td,
+.grid th {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.grid tr:nth-child(even) {
+  background-color: var(--grid-dark-background-color);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.grid-input-container {
+  position: relative;
+}
+
+.grid-input {
+  width: 325px;
+  height: 100%;
+  background-color: var(--primary-color);
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 12px;
+}
+
+.grid-input::placeholder {
+  color: #ffffff8f;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  color: #ffffff8f;
+  margin-right: 15px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  background-color: #0000009d;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal-wrapper.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  width: 400px;
+  min-height: 400px;
+  border-radius: 4px;
+  background-color: var(--dark-primary-color);
+  padding: 45px 40px;
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 28px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.modal-input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal-input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-101%);
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 40px;
+}
+
+.modal-input::placeholder {
+  color: #ffffff8f;
+}
+
+.modal-input-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #ffffff8f;
+  margin-left: 15px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-button {
+  width: 100%;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  margin: 10px 15px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s color;
+}
+
+.modal-close-button:hover {
+  color: #ffffff8f;
+}
+
+.modal-textarea {
+  width: 100%;
+  height: 120px;
+  background-color: var(--primary-color);
+  color: white;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
